@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>Trabajo Integrador</title>
+        <meta charset="utf8">
+    </head>
+    <body>
+        <fieldset> <!-- EL FIELDSET CREA GRUPO DE CAMPOS O ENCUADRE -->
+            Trabajo Practico Integrador - JTP: Ruben Aybar - Comision N°3 - Alumno: Nicolas Ezequiel Gaitan
+        </fieldset>
+    <fieldset><!-- EL FIELDSET CREA GRUPO DE CAMPOS O ENCUADRE -->
+<form action="formulario.php" method="post"> <!-- ACA ENVIAMOS LOS DATOS A PHP EN FORMATO POST -->
+    <p>Fecha: <input class="celda" type="date" name="fecha" required></p>
+    <p>Nombre: <input class="celda" name="nombre" maxlength="50" required></p> <!-- CON MAXLENGTH LIMITAMOS EL NUMERO DE CARACTERES -->
+        <form>Provincia <!-- ACA CREAMOS EL MENU DESPLEGABLE PARA QUE EL USUARIO PUEDA ELEGIR EL TIPO DE IMPUESTO https://www.youtube.com/watch?v=S2PJ_hHN56M -->
+        <select class="celda" id="provincia" name="provincia" required>
+            <option value="10">Neuquen- Impuesto 10%</option>
+            <option value="20">Buenos Aires- Impuesto 20%</option>
+            <option value="30">Mendoza- Impuesto 30%</option>
+        </form>
+        </select>
+
+<!-- CON EL STYLE LE DAMOS ESTILO A LA TABLE QUE ESTAMOS CREANDO https://www.youtube.com/watch?v=SjVFCsBPzWU -->
+<style>  
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+</style>
+
+
+<p>Detalle:</p>
+<table>  <!-- CON EL TABLE CREAMOS LA TABLA PARA QUE LAS OPCIONES QUEDEN ORGANIZADAS https://www.youtube.com/watch?v=SjVFCsBPzWU -->
+<tr> <!-- DEFINIMOS UNA FILA DE CELDAS  EN UNA TABLA -->
+    <th>Codigo:</th> <!-- CON EL TH CREAMOS UNA CELDA COMO ENCABEZADO DE GRUPO -->
+    <th>Descripcion:</th>
+    <th>Cantidad:</th>
+    <th>Precio: </th>
+</tr>
+
+<tr>    
+    <script>
+        function validarFormulario() {
+          var input1 = document.getElementById("codigo").value;
+          var input2 = document.getElementById("codigo1").value;
+          var input3 = document.getElementById("descripcion").value;
+          var input4 = document.getElementById("descripcion1").value;
+          
+          if (input1 === input2 && input3 != input4)  {
+            alert("Los codigos son iguales");
+            return false;
+          }
+          if (input1 != input2 && input3 === input4)  {
+            alert("Los productos son iguales.");
+            return false;
+          }
+          return true;
+        }
+      </script>
+<!-- CON EL TH CREAMOS UNA CELDA COMO ENCABEZADO DE GRUPO -->
+
+    <td><input type="number" class="celda" name="codigo" min="1" maxlength="10" required></td> <!-- USAMOS EL ATRIBUTO CELDA PARA SELECCIONAR UNA CELDA Y CON PHP LE ARROJAMOS EL RESULTADO -->
+    <td><input type="text" class="celda" name="descripcion" maxlength="50" required></td>
+    <td><input type="number" class="celda" name="cantidad" min="1" maxlength="10" required></td>
+    <td><input type="number" class="celda" name="precio" min="1" required></td>
+</tr>   
+<tr>
+    <td><input type="number" class="celda" name="codigo1" min="1" maxlength="10" required></td> 
+    <td><input type="text" class="celda" name="descripcion1" maxlength="50" required></td>
+    <td><input type="number" class="celda" name="cantidad1" min="1" maxlength="10" required></td>
+    <td><input type="number" class="celda" name="precio1" min="1" required></td>
+</tr>
+</table>
+
+<p><input type="submit" value="Enviar" name="submit"> </p> <!-- CREAMOS BOTON DE ENVIAR -->
+
+</form>
+</fieldset>
+</body>
+</html>
